@@ -38,7 +38,7 @@ const Navbar = () => {
   };
 
   return (
-    <AppBar position='static' className={styles.navbar}>
+    <AppBar position='fixed' elevation={0} className={styles.navbar}>
       <Toolbar>
         <Typography variant='h6' component='div' sx={{ flexGrow: 1 }}>
           <Link href='/' className={styles.logo}>
