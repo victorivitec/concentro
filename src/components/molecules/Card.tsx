@@ -1,34 +1,55 @@
-'use client'
-import React, { useState } from 'react';
-import { Card, CardContent } from '@mui/material';
-import { Text } from '../atoms/data-display/Text';
-import s from './Card.module.scss';
+import { Box, Card, CardContent, Typography, IconButton } from "@mui/material";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp"; // Ícono de WhatsApp
+// import LocalGroceryStoreIcon from "@mui/icons-material/LocalGroceryStore"; // Ícono ejemplo
 
-import LunchDiningIcon from '@mui/icons-material/LunchDining';
-
-interface CardComponentProps {
+interface ServiceCardProps {
   title: string;
-  content: string;
+  description: string;
+  icon: React.ReactNode;
 }
 
-const CardComponent: React.FC<CardComponentProps> = ({ title, content }) => {
-  const [elevation, setElevation] = useState(0);
-
+export const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, icon }) => {
   return (
     <Card
-      className={s.card}
-      elevation={elevation}
-      onMouseEnter={() => setElevation(12)} // Incrementa la elevación al hover
-      onMouseLeave={() => setElevation(0)}
-      style={{ transition: 'all 0.5s ease-in' }}
+      sx={{
+        width: 300,
+        borderRadius: "12px",
+        boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
+        textAlign: "center",
+        position: "relative",
+      }}
     >
       <CardContent>
-      <LunchDiningIcon sx={{fontSize: '5em'}}/>
-        <Text type='subtitle1' color='primary'>{title}</Text>
-        <Text type='body1'>{content}</Text>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            marginBottom: 2,
+          }}
+        >
+          {icon}
+        </Box>
+        <Typography variant="h6" fontWeight="bold" color="primary">
+          {title}
+        </Typography>
+        <Typography variant="body2" color="text.secondary" mt={1}>
+          {description}
+        </Typography>
       </CardContent>
+      <IconButton
+        sx={{
+          position: "absolute",
+          bottom: 16,
+          right: 16,
+          backgroundColor: "green",
+          color: "white",
+          "&:hover": { backgroundColor: "darkgreen" },
+        }}
+      >
+        <WhatsAppIcon />
+      </IconButton>
     </Card>
   );
 };
 
-export default CardComponent;

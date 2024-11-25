@@ -8,6 +8,10 @@ import { Grid2 as Grid, Box } from '@mui/material';
 import { PrimaryLayout as Layout } from '~/components/templates/layout';
 import { Button } from '~/components/atoms/input/Button';
 import { Text } from '~/components/atoms/data-display/Text';
+import { ServiceCard } from '~/components/molecules/Card';
+
+import SecurityIcon from '@mui/icons-material/Security';
+import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
 
 export default function Home() {
   return (
@@ -43,12 +47,42 @@ export default function Home() {
       {/* otra sección */}
       <Box>
         <Grid container>
-          <Grid>
-            <Box sx={{ display: 'flex' }}>
+          {/* container del texto */}
+          <Grid sx={{ display: 'flex', alignItems: 'flex-start' }}>
+            <Box sx={{ display: 'flex', width: '50%' }}>
               <Text type='h5'>Puntos de</Text>
               <Text type='h5' color='primary'>
                 &nbsp;Valor
               </Text>
+            </Box>
+            <Box>
+              <Text>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis eligendi earum ducimus iste dolore! Nihil eius dolore ut
+                eveniet autem.
+              </Text>
+            </Box>
+          </Grid>
+          {/* container button & carousel */}
+          <Grid sx={{ display: 'flex', justifyContent: 'space-between' }}>
+            <Box>
+              <Button variant='outlined'>ver más</Button>
+            </Box>
+            <Box>
+              <ServiceCard
+                title='Zona de alimentos'
+                description='Seleccione comida entre una amplia variedad.'
+                icon={<SecurityIcon fontSize='large' color='primary' />}
+              />
+              <ServiceCard
+                title='Seguridad'
+                description='Servicios 24/7 para tu tranquilidad.'
+                icon={<SecurityIcon fontSize='large' color='primary' />}
+              />
+              <ServiceCard
+                title='Servicios médicos'
+                description='Acceso inmediato a atención médica.'
+                icon={<LocalHospitalIcon fontSize='large' color='primary' />}
+              />
             </Box>
           </Grid>
         </Grid>
