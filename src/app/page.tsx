@@ -63,11 +63,11 @@ export default function Home() {
             </Box>
           </Grid>
           {/* container button & carousel */}
-          <Grid sx={{ display: 'flex', justifyContent: 'space-between' }}>
-            <Box>
+          <Grid sx={{ display: 'flex', justifyContent: 'space-between', height: '40vh'}}>
+            <Box sx={{width: '50%'}}>
               <Button variant='outlined'>ver más</Button>
             </Box>
-            <Box>
+            <Box sx={{display: 'flex',justifyContent: 'space-between'}}>
               <ServiceCard
                 title='Zona de alimentos'
                 description='Seleccione comida entre una amplia variedad.'

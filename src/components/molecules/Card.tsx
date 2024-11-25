@@ -1,6 +1,6 @@
+import React from "react";
 import { Box, Card, CardContent, Typography, IconButton } from "@mui/material";
-import WhatsAppIcon from "@mui/icons-material/WhatsApp"; // Ícono de WhatsApp
-// import LocalGroceryStoreIcon from "@mui/icons-material/LocalGroceryStore"; // Ícono ejemplo
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 
 interface ServiceCardProps {
   title: string;
@@ -11,12 +11,23 @@ interface ServiceCardProps {
 export const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, icon }) => {
   return (
     <Card
+      elevation={0}
       sx={{
-        width: 300,
+        margin: "0.5em",
         borderRadius: "12px",
-        boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
         textAlign: "center",
         position: "relative",
+        overflow: "hidden", // Asegura que el contenido no desborde
+        transition: "height 0.3s, box-shadow 0.3s", // Animación suave
+        height: 200, // Altura inicial
+        "&:hover": {
+          boxShadow: 8,
+          height: 250, // Altura aumentada al hacer hover
+          "& .whatsapp-icon-box": {
+            opacity: 1, // Hacer visible el ícono al alargar el card
+            visibility: "visible", // Asegura que el ícono sea renderizado
+          },
+        },
       }}
     >
       <CardContent>
@@ -37,19 +48,28 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, ic
           {description}
         </Typography>
       </CardContent>
-      <IconButton
+      {/* Ícono de WhatsApp */}
+      <Box
+        className="whatsapp-icon-box" // Clase para vincular el estilo en hover
         sx={{
           position: "absolute",
           bottom: 16,
           right: 16,
-          backgroundColor: "green",
-          color: "white",
-          "&:hover": { backgroundColor: "darkgreen" },
+          opacity: 0, // Inicialmente oculto
+          visibility: "hidden", // Ocultar del flujo del diseño
+          transition: "opacity 0.3s, visibility 0.3s", // Animación suave
         }}
       >
-        <WhatsAppIcon />
-      </IconButton>
+        <IconButton
+          sx={{
+            backgroundColor: "green",
+            color: "white",
+            "&:hover": { backgroundColor: "darkgreen" },
+          }}
+        >
+          <WhatsAppIcon />
+        </IconButton>
+      </Box>
     </Card>
   );
 };
-
