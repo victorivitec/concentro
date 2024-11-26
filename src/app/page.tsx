@@ -63,11 +63,11 @@ export default function Home() {
             </Box>
           </Grid>
           {/* container button & carousel */}
-          <Grid sx={{ display: 'flex', justifyContent: 'space-between', height: '40vh'}}>
-            <Box sx={{width: '50%'}}>
+          <Grid sx={{ display: 'flex', justifyContent: 'space-between', height: '40vh' }}>
+            <Box sx={{ width: '50%' }}>
               <Button variant='outlined'>ver más</Button>
             </Box>
-            <Box sx={{display: 'flex',justifyContent: 'space-between'}}>
+            <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
               <ServiceCard
                 title='Zona de alimentos'
                 description='Seleccione comida entre una amplia variedad.'
@@ -90,11 +90,12 @@ export default function Home() {
       {/* otra sección */}
       <Box>
         <Grid container>
-          <Grid>
-            <Text type='h5'>Conoce nuestros planes y escoge el que</Text>
-            <Text type='h5' color='primary'>
-              mejor se adapte a ti
-            </Text>
+          <Grid sx={{display: 'flex'}}>
+            <Image src={'/images/image.png'} width={350} height={350} alt='ola' />
+            <Box>
+              <Text type='h5'>Conoce nuestros planes y escoge el que <span style={{color: '#f68529'}}>mejor se adapte a ti</span></Text>
+              <Button variant='contained' color='secondary'>ver más</Button>
+            </Box>
           </Grid>
         </Grid>
       </Box>
