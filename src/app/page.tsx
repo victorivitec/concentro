@@ -16,30 +16,36 @@ import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
 export default function Home() {
   return (
     <Layout>
-      {/* section */}
+      {/* Banner section _______________________________________________________________________________________ */}
       <Box>
-        <Grid container>
-          {/* texto */}
-          <Grid size={{ xs: 12, lg: 6 }}>
-            <Box sx={{ marginBottom: '2em' }}>
-              <Text type='h2'>Concentro</Text>
-              <Text type='h2'>ha cambiado.</Text>
+        <Grid container sx={{ py: '10em' }}>
+          {/* Text & Button __________ */}
+          <Grid size={{ xs: 12, sm: 12, md: 6, lg: 6 }} sx={{ py: '4em', display: { sm: 'flex' }, justifyContent: { sm: 'center' } }}>
+            <Box>
+              {/* texto */}
+              <Box sx={{ textAlign: { xs: 'center', md: 'initial' } }}>
+                <Text type='h2'>
+                  Concentro <br /> ha cambiado
+                </Text>
+              </Box>
+              {/* botón */}
+              <Button variant='contained'>ver más</Button>
             </Box>
-            {/* botón */}
-            <Button variant='contained'>ver más</Button>
           </Grid>
-          {/* imagen */}
-          <Grid>
-            <Image src={'/images/image.png'} width={500} height={500} alt='ola' />
+          {/* imagen __________ */}
+          <Grid size={{ xs: 12, sm: 12, md: 6, lg: 6 }}>
+            <Box sx={{ height: { xs: '25em', md: '100%' }, position: 'relative' }}>
+              <Image src='/images/image.png' alt='logo' fill style={{ objectFit: 'contain' }} />
+            </Box>
           </Grid>
-          {/* talon */}
-          <Grid sx={{ width: '100%', display: 'flex', justifyContent: 'space-between', py: '2em' }}>
+          {/* talon __________ */}
+          <Grid sx={{ width: '100vw', display: 'flex', justifyContent: 'center', py: '2em' }}>
             <Button color='inherit' sx={{ fontWeight: 'bold' }}>
               Inicio - ver más
             </Button>
             <Box sx={{ textAlign: 'end' }}>
-              <Text>Contacto</Text>
-              <Text color='primary'>00-000-0000</Text>
+              <Text sx={{fontWeight: 'bold'}}>Contacto</Text>
+              <Text color='primary' sx={{fontWeight: 'bold'}}>00-000-0000</Text>
             </Box>
           </Grid>
         </Grid>
@@ -90,11 +96,15 @@ export default function Home() {
       {/* otra sección */}
       <Box>
         <Grid container>
-          <Grid sx={{display: 'flex'}}>
+          <Grid sx={{ display: 'flex' }}>
             <Image src={'/images/image.png'} width={350} height={350} alt='ola' />
             <Box>
-              <Text type='h5'>Conoce nuestros planes y escoge el que <span style={{color: '#f68529'}}>mejor se adapte a ti</span></Text>
-              <Button variant='contained' color='secondary'>ver más</Button>
+              <Text type='h5'>
+                Conoce nuestros planes y escoge el que <span style={{ color: '#f68529' }}>mejor se adapte a ti</span>
+              </Text>
+              <Button variant='contained' color='secondary'>
+                ver más
+              </Button>
             </Box>
           </Grid>
         </Grid>
