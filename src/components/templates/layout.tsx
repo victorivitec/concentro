@@ -10,6 +10,8 @@ export const PrimaryLayout = ({ children }: { children: React.ReactNode }) => {
     <ThemeProvider theme={lightTheme}>
       <CssBaseline />
       <Navbar />
+      <br />
+      <br />
       <Container maxWidth='lg'>{children}</Container>
     </ThemeProvider>
   );

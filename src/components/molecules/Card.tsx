@@ -13,13 +13,14 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, ic
     <Card
       elevation={0}
       sx={{
-        margin: "0.5em",
+        margin: "0em",
         borderRadius: "12px",
         textAlign: "center",
         position: "relative",
         overflow: "hidden", // Asegura que el contenido no desborde
         transition: "height 0.3s, box-shadow 0.3s", // Animación suave
         height: 200, // Altura inicial
+        width: {xs: '100%', md: '30%'},
         "&:hover": {
           boxShadow: 8,
           height: 250, // Altura aumentada al hacer hover

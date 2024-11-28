@@ -18,78 +18,72 @@ export default function Home() {
     <Layout>
       {/* Banner section _______________________________________________________________________________________ */}
       <Box>
-        <Grid container sx={{ py: '10em' }}>
-          {/* Text & Button __________ */}
-          <Grid size={{ xs: 12, sm: 12, md: 6, lg: 6 }} sx={{ py: '4em', display: { sm: 'flex' }, justifyContent: { sm: 'center' } }}>
-            <Box>
-              {/* texto */}
-              <Box sx={{ textAlign: { xs: 'center', md: 'initial' } }}>
-                <Text type='h2'>
-                  Concentro <br /> ha cambiado
-                </Text>
-              </Box>
-              {/* botón */}
+        {/* parent */}
+        <Box sx={{ display: 'flex', justifyContent: { xs: 'center', md: 'space-between' }, flexDirection: { xs: 'column', md: 'row' } }}>
+          {/* child 1 */}
+          <Box sx={{ width: '100%' }}>
+            <Box sx={{ textAlign: { xs: 'center', md: 'left' } }}>
+              <Text type='h2'>
+                Concentro <br /> ha cambiado
+              </Text>
               <Button variant='contained'>ver más</Button>
             </Box>
-          </Grid>
-          {/* imagen __________ */}
-          <Grid size={{ xs: 12, sm: 12, md: 6, lg: 6 }}>
-            <Box sx={{ height: { xs: '25em', md: '100%' }, position: 'relative' }}>
-              <Image src='/images/image.png' alt='logo' fill style={{ objectFit: 'contain' }} />
-            </Box>
-          </Grid>
-          {/* talon __________ */}
-          <Grid sx={{ width: '100vw', display: 'flex', justifyContent: 'center', py: '2em' }}>
-            <Button color='inherit' sx={{ fontWeight: 'bold' }}>
-              Inicio - ver más
-            </Button>
-            <Box sx={{ textAlign: 'end' }}>
-              <Text sx={{fontWeight: 'bold'}}>Contacto</Text>
-              <Text color='primary' sx={{fontWeight: 'bold'}}>00-000-0000</Text>
-            </Box>
-          </Grid>
-        </Grid>
+          </Box>
+          {/* child 2 */}
+          <Box sx={{ height: { xs: '30vh', md: '50vh' }, width: { xs: '100vw', md: '50vw' }, position: 'relative' }}>
+            <Image src='/images/image.png' alt='logo' fill style={{ objectFit: 'contain' }} />
+          </Box>
+        </Box>
       </Box>
+      {/*
+        -
+        -      
+      */}
       {/* otra sección */}
       <Box>
         <Grid container>
-          {/* container del texto */}
-          <Grid sx={{ display: 'flex', alignItems: 'flex-start' }}>
-            <Box sx={{ display: 'flex', width: '50%' }}>
-              <Text type='h5'>Puntos de</Text>
-              <Text type='h5' color='primary'>
-                &nbsp;Valor
-              </Text>
-            </Box>
+          {/* title */}
+          <Grid size={{ xs: 12, md: 5 }}>
             <Box>
-              <Text>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis eligendi earum ducimus iste dolore! Nihil eius dolore ut
-                eveniet autem.
+              <Text type='h4' sx={{ textAlign: 'center' }}>
+                Puntos de <span style={{ color: '#f68529' }}>Valor</span>
               </Text>
             </Box>
           </Grid>
+          {/* description */}
+          <Grid size={{ xs: 12, md: 7 }}>
+            <Text sx={{ marginTop: '1em' }}>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis eligendi earum ducimus iste dolore! Nihil eius dolore ut
+              eveniet autem.
+            </Text>
+          </Grid>
           {/* container button & carousel */}
-          <Grid sx={{ display: 'flex', justifyContent: 'space-between', height: '40vh' }}>
-            <Box sx={{ width: '50%' }}>
-              <Button variant='outlined'>ver más</Button>
-            </Box>
-            <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-              <ServiceCard
-                title='Zona de alimentos'
-                description='Seleccione comida entre una amplia variedad.'
-                icon={<SecurityIcon fontSize='large' color='primary' />}
-              />
-              <ServiceCard
-                title='Seguridad'
-                description='Servicios 24/7 para tu tranquilidad.'
-                icon={<SecurityIcon fontSize='large' color='primary' />}
-              />
-              <ServiceCard
-                title='Servicios médicos'
-                description='Acceso inmediato a atención médica.'
-                icon={<LocalHospitalIcon fontSize='large' color='primary' />}
-              />
-            </Box>
+          <Grid size={12}>
+            <Grid container sx={{py: '2em'}}>
+              <Grid size={{ xs: 12, md: 3 }} sx={{ display: 'flex', justifyContent: 'center', py: '2em' }}>
+                <Box>
+                  <Button variant='outlined'>ver más</Button>
+                </Box>
+              </Grid>
+              {/* tarjetas */}
+              <Grid size={{ xs: 12, md: 9 }} sx={{ height: {xs: '90vh', md: '35vh'},display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap'}}>
+                <ServiceCard
+                  title='Zona de alimentos'
+                  description='Seleccione comida entre una amplia variedad.'
+                  icon={<SecurityIcon fontSize='large' color='primary' />}
+                />
+                <ServiceCard
+                  title='Seguridad'
+                  description='Servicios 24/7 para tu tranquilidad.'
+                  icon={<SecurityIcon fontSize='large' color='primary' />}
+                />
+                <ServiceCard
+                  title='Servicios médicos'
+                  description='Acceso inmediato a atención médica.'
+                  icon={<LocalHospitalIcon fontSize='large' color='primary' />}
+                />
+              </Grid>
+            </Grid>
           </Grid>
         </Grid>
       </Box>
