@@ -1,17 +1,21 @@
-// import Image from 'next/image';
-// import Grid from '@mui/material/Grid2';
-// import { Box } from '@mui/material';
-// import { PrimaryLayout as Layout } from '~/components/templates/layout';
-// import CardComponent from '~/components/molecules/Card';
 import Image from 'next/image';
 import { Grid2 as Grid, Box } from '@mui/material';
 import { PrimaryLayout as Layout } from '~/components/templates/layout';
 import { Button } from '~/components/atoms/input/Button';
 import { Text } from '~/components/atoms/data-display/Text';
 import { ServiceCard } from '~/components/molecules/Card';
+import LogoPanel from '~/components/molecules/LogoPanel';
 
 import SecurityIcon from '@mui/icons-material/Security';
 import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
+
+const logos = [
+  { src: '/images/image copy.png', alt: 'Amazon Logo', size: 'large' }, // Correcto
+  { src: '/images/image.png', alt: 'Google Logo', size: 'small' },
+  { src: '/images/image.png', alt: 'Apple Logo', size: 'large' },
+  { src: '/images/image.png', alt: 'Nike Logo', size: 'small' },
+  { src: '/images/image.png', alt: 'Pepsi Logo', size: 'small' },
+];
 
 export default function Home() {
   return (
@@ -59,14 +63,17 @@ export default function Home() {
           </Grid>
           {/* container button & carousel */}
           <Grid size={12}>
-            <Grid container sx={{py: '2em'}}>
+            <Grid container sx={{ py: '2em' }}>
               <Grid size={{ xs: 12, md: 3 }} sx={{ display: 'flex', justifyContent: 'center', py: '2em' }}>
                 <Box>
                   <Button variant='outlined'>ver más</Button>
                 </Box>
               </Grid>
               {/* tarjetas */}
-              <Grid size={{ xs: 12, md: 9 }} sx={{ height: {xs: '90vh', md: '35vh'},display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap'}}>
+              <Grid
+                size={{ xs: 12, md: 9 }}
+                sx={{ height: { xs: '80vh', md: '20vh' }, display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap' }}
+              >
                 <ServiceCard
                   title='Zona de alimentos'
                   description='Seleccione comida entre una amplia variedad.'
@@ -90,8 +97,12 @@ export default function Home() {
       {/* otra sección */}
       <Box>
         <Grid container>
-          <Grid sx={{ display: 'flex' }}>
-            <Image src={'/images/image.png'} width={350} height={350} alt='ola' />
+          <Grid size={{ xs: 12, md: 4 }}>
+            <Box sx={{ height: { xs: '30vh', md: '40vh' }, width: { xs: '100vw', md: '30vw' }, position: 'relative' }}>
+              <Image src='/images/image.png' alt='logo' fill style={{ objectFit: 'contain' }} />
+            </Box>
+          </Grid>
+          <Grid size={{ xs: 12, md: 8 }} sx={{ display: 'flex', alignItems: 'flex-end' }}>
             <Box>
               <Text type='h5'>
                 Conoce nuestros planes y escoge el que <span style={{ color: '#f68529' }}>mejor se adapte a ti</span>
@@ -105,12 +116,18 @@ export default function Home() {
       </Box>
       {/* otra sección */}
       <Box>
-        <Grid container>
-          <Grid>
+        <Grid container sx={{ py: '5em' }}>
+          <Grid size={6}>
             <Text type='h5'>Más de 120 empresas en nuestro centro de negocios,</Text>
             <Text type='h5' color='primary'>
               quieres ser nuestro aliado comercial?
             </Text>
+            <Button variant='contained' color='secondary'>
+              contacto
+            </Button>
+          </Grid>
+          <Grid size={{ xs: 12, md: 6 }}>
+            <LogoPanel logos={logos} />
           </Grid>
         </Grid>
       </Box>
