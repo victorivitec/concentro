@@ -1,94 +1,149 @@
-// components/Navbar.tsx
-import { AppBar, Toolbar, Typography, IconButton, Menu, MenuItem, Button } from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { useState } from 'react';
-import Link from 'next/link';
-import styles from './Navbar.module.scss';
+"use client";
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  IconButton,
+  Drawer,
+  List,
+  ListItem,
+  ListItemText,
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
+  Button,
+  Box,
+  useMediaQuery,
+} from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { useState } from "react";
+import Link from "next/link";
+import { useTheme } from "@mui/material/styles";
+import styles from "./Navbar.module.scss";
 
-// Array de links con submenús en el mismo archivo
+// Array de links con submenús
 const navLinks = [
-  { label: 'Inicio', path: '/' },
+  { label: "Inicio", path: "/" },
   {
-    label: 'Servicios',
+    label: "Servicios",
     subLinks: [
-      { label: 'Servicio 1', path: '/servicio1' },
-      { label: 'Servicio 2', path: '/servicio2' },
+      { label: "Servicio 1", path: "/servicio1" },
+      { label: "Servicio 2", path: "/servicio2" },
     ],
   },
   {
-    label: 'mas',
+    label: "Más",
     subLinks: [
-      { label: 'Servicio 1', path: '/servicio1' },
-      { label: 'Servicio 2', path: '/servicio2' },
+      { label: "Servicio 3", path: "/servicio3" },
+      { label: "Servicio 4", path: "/servicio4" },
     ],
   },
-  { label: 'Contacto', path: '/contacto' },
+  { label: "Contacto", path: "/contacto" },
 ];
 
 const Navbar = () => {
-  const [anchorEl, setAnchorEl] = useState<{ [key: string]: HTMLElement | null }>({});
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [expanded, setExpanded] = useState<string | false>(false);
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md")); // Detecta pantallas pequeñas (menor a "md")
 
-  const handleMenuOpen = (event: React.MouseEvent<HTMLElement>, label: string) => {
-    setAnchorEl((prev) => ({ ...prev, [label]: event.currentTarget }));
+  const toggleMobileMenu = () => {
+    setMobileOpen(!mobileOpen);
   };
 
-  const handleMenuClose = (label: string) => {
-    setAnchorEl((prev) => ({ ...prev, [label]: null }));
+  const handleAccordionToggle = (panel: string) => {
+    setExpanded((prev) => (prev === panel ? false : panel));
   };
 
   return (
-    <AppBar position='fixed' elevation={0} className={styles.navbar}>
+    <AppBar position="fixed" elevation={0} className={styles.navbar}>
       <Toolbar>
-        <Typography variant='h6' component='div' sx={{ flexGrow: 1 }}>
-          <Link href='/' className={styles.logo}>
+        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          <Link href="/" className={styles.logo}>
             Concentro
           </Link>
         </Typography>
 
-        {/* Generar los links dinámicamente */}
-        {navLinks.map((link) => (
-          <div key={link.label}>
-            {link.subLinks ? (
-              <>
-                {/* Link con submenú */}
-                <Button
-                  color='inherit'
-                  variant='text'
-                  aria-controls={`${link.label}-menu`}
-                  aria-haspopup='true'
-                  onClick={(event) => handleMenuOpen(event, link.label)}
-                  className={styles.navLink}
-                >
-                  {link.label}
-                  <ExpandMoreIcon className={`${styles.expandIcon} ${anchorEl[link.label] ? styles.open : ''}`} />
-                </Button>
-                <Menu
-                  id={`${link.label}-menu`}
-                  anchorEl={anchorEl[link.label]}
-                  open={Boolean(anchorEl[link.label])}
-                  onClose={() => handleMenuClose(link.label)}
-                >
-                  {link.subLinks.map((subLink) => (
-                    <MenuItem key={subLink.label} onClick={() => handleMenuClose(link.label)}>
-                      <Link href={subLink.path}>{subLink.label}</Link>
-                    </MenuItem>
+        {/* Menú móvil */}
+        {isMobile ? (
+          <>
+            <IconButton edge="end" color="inherit" onClick={toggleMobileMenu}>
+              <MenuIcon />
+            </IconButton>
+            <Drawer anchor="right" open={mobileOpen} onClose={toggleMobileMenu}>
+              <Box sx={{ width: 250, py: 2 }}>
+                <List>
+                  {navLinks.map((link) => (
+                    <div key={link.label}>
+                      {link.subLinks ? (
+                        <Accordion
+                          expanded={expanded === link.label}
+                          onChange={() => handleAccordionToggle(link.label)}
+                        >
+                          <AccordionSummary
+                            expandIcon={<ExpandMoreIcon />}
+                            aria-controls={`${link.label}-content`}
+                            id={`${link.label}-header`}
+                          >
+                            <Typography variant="subtitle1" sx={{ fontWeight: "bold" }}>
+                              {link.label}
+                            </Typography>
+                          </AccordionSummary>
+                          <AccordionDetails>
+                            <List>
+                              {link.subLinks.map((subLink) => (
+                                <ListItem
+                                  key={subLink.label}
+                                  component={Link}
+                                  href={subLink.path}
+                                  onClick={toggleMobileMenu}
+                                >
+                                  <ListItemText primary={subLink.label} />
+                                </ListItem>
+                              ))}
+                            </List>
+                          </AccordionDetails>
+                        </Accordion>
+                      ) : (
+                        <ListItem
+                          component={Link}
+                          href={link.path}
+                          onClick={toggleMobileMenu}
+                        >
+                          <ListItemText primary={link.label} />
+                        </ListItem>
+                      )}
+                    </div>
                   ))}
-                </Menu>
-              </>
-            ) : (
-              // Link simple sin submenú
-              <Button className={styles.navLink} color='inherit'>
-                <Link href={link.path}>{link.label}</Link>
-              </Button>
-            )}
-          </div>
-        ))}
-
-        {/* Ícono de menú para dispositivos móviles */}
-        <IconButton edge='end' color='inherit' aria-label='menu'>
-          <MenuIcon />
-        </IconButton>
+                </List>
+              </Box>
+            </Drawer>
+          </>
+        ) : (
+          // Menú de escritorio
+          <>
+            {navLinks.map((link) => (
+              <div key={link.label}>
+                {link.subLinks ? (
+                  <Button
+                    color="inherit"
+                    variant="text"
+                    aria-controls={`${link.label}-menu`}
+                    aria-haspopup="true"
+                    className={styles.navLink}
+                  >
+                    {link.label}
+                  </Button>
+                ) : (
+                  <Button className={styles.navLink} color="inherit">
+                    <Link href={link.path}>{link.label}</Link>
+                  </Button>
+                )}
+              </div>
+            ))}
+          </>
+        )}
       </Toolbar>
     </AppBar>
   );
