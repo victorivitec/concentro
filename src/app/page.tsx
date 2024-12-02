@@ -9,6 +9,8 @@ import LogoPanel from '~/components/molecules/LogoPanel';
 import SecurityIcon from '@mui/icons-material/Security';
 import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
 
+import ContactSection from '~/components/organisms/ContactSection';
+
 const logos = [
   { src: '/images/image copy.png', alt: 'Amazon Logo', size: 'large' }, // Correcto
   { src: '/images/image.png', alt: 'Google Logo', size: 'small' },
@@ -133,15 +135,64 @@ export default function Home() {
       </Box>
       {/* otra sección */}
       <Box>
-        <Grid container>
-          <Grid>
-            <Text type='h5'>Conoce nuestros planes y escoge el que</Text>
-            <Text type='h5' color='primary'>
-              mejor se adapte a ti
-            </Text>
+        <Grid container sx={{py: '5em'}}>
+          <Grid size={{ xs: 12, md: 3 }}>
+            <Box sx={{ height: { xs: '20vh', md: '30vh' }, width: { xs: '100%', md: '20vw' }, position: 'relative' }}>
+              <Image src='/images/image.png' alt='logo' fill style={{ objectFit: 'contain' }} />
+            </Box>
+          </Grid>
+          <Grid size={{ xs: 12, md: 5 }} sx={{ display: 'flex', alignItems: 'flex-start' }}>
+            <Box>
+              <Text type='h5'>
+                Conoce nuestros planes y escoge el que <span style={{ color: '#f68529' }}>mejor se adapte a ti</span>
+              </Text>
+              <Text type='caption'>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis reprehenderit perspiciatis perferendis praesentium recusandae,
+                maiores, officia fugiat sint laboriosam corrupti atque quo iste expedita dolorum optio. Omnis iste commodi tempora!
+              </Text>
+            </Box>
+          </Grid>
+          <Grid size={{ xs: 12, md: 4 }} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-around' }}>
+            <Box sx={{ py: '1em',display: 'flex', justifyContent: 'center', flexDirection: 'row' }}>
+              <Text type='h4'>120</Text>
+              <span style={{ color: '#f68529', paddingLeft: '1em' }}>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, provident.
+              </span>
+            </Box>
+            <Box sx={{ display: 'flex', justifyContent: 'center', flexDirection: 'row' }}>
+              <Text type='h4'>120</Text>
+              <span style={{ color: '#f68529', paddingLeft: '1em' }}>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, provident.
+              </span>
+            </Box>
+            <Box sx={{ display: 'flex', justifyContent: 'center', flexDirection: 'row' }}>
+              <Text type='h4'>120</Text>
+              <span style={{ color: '#f68529', paddingLeft: '1em' }}>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, provident.
+              </span>
+            </Box>
           </Grid>
         </Grid>
       </Box>
+      {/* otra sección */}
+      <Grid>
+        <Grid container>
+        <Grid size={{xs: 12, md: 4}} sx={{px: '0.5em'}}>
+          <Text type="h4" color="primary">test</Text>
+          <Text>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum minima voluptates, illo aperiam reprehenderit aliquid odit sit omnis impedit unde?</Text>
+        </Grid>
+        <Grid size={{xs: 12, md: 4}} sx={{px: '0.5em'}}>
+          <Text type="h4" color="primary">test</Text>
+          <Text>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum minima voluptates, illo aperiam reprehenderit aliquid odit sit omnis impedit unde?</Text>
+        </Grid>
+        <Grid size={{xs: 12, md: 4}} sx={{px: '0.5em'}}>
+          <Text type="h4" color="primary">test</Text>
+          <Text>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum minima voluptates, illo aperiam reprehenderit aliquid odit sit omnis impedit unde?</Text>
+        </Grid>
+        </Grid>
+      </Grid>
+      {/* seccion contacto */}
+      <ContactSection />
     </Layout>
   );
 }
