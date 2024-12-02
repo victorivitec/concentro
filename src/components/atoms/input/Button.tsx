@@ -24,7 +24,7 @@ export const Button: React.FC<ButtonProps> = (props) => {
   }, className);
 
   return (
-    <MuiButton className={buttonClassName} variant={variant} {...rest}>
+    <MuiButton sx={{borderRadius: '5em'}} className={buttonClassName} variant={variant} {...rest}>
       {children}
     </MuiButton>
   );
