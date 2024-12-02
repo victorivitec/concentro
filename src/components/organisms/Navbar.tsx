@@ -68,8 +68,8 @@ const Navbar = () => {
         {/* Menú móvil */}
         {isMobile ? (
           <>
-            <IconButton edge="end" color="inherit" onClick={toggleMobileMenu}>
-              <MenuIcon />
+            <IconButton  edge="end" color="inherit" onClick={toggleMobileMenu}>
+              <MenuIcon sx={{fontSize: '1.5em'}}/>
             </IconButton>
             <Drawer anchor="right" open={mobileOpen} onClose={toggleMobileMenu}>
               <Box sx={{ width: 250, py: 2 }}>

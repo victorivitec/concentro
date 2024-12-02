@@ -36,7 +36,7 @@ export default function Home() {
             </Box>
           </Box>
           {/* child 2 */}
-          <Box sx={{ height: { xs: '30vh', md: '50vh' }, width: { xs: '100vw', md: '50vw' }, position: 'relative' }}>
+          <Box sx={{ opacity: {xs: '0.7'} , zIndex: {xs: -1}, top:{xs: '5%'}, position: {xs: 'absolute', md: 'relative'},height: { xs: '50vh', md: '50vh' }, width: { xs: '100vw', md: '50vw' }}}>
             <Image src='/images/image.png' alt='logo' fill style={{ objectFit: 'contain' }} />
           </Box>
         </Box>
@@ -52,7 +52,7 @@ export default function Home() {
           <Grid size={{ xs: 12, md: 5 }}>
             <Box>
               <Text type='h4' sx={{ textAlign: 'center' }}>
-                Puntos de <span style={{ color: '#f68529' }}>Valor</span>
+                Puntos de <span style={{ color: '#f1842c' }}>Valor</span>
               </Text>
             </Box>
           </Grid>
@@ -107,7 +107,7 @@ export default function Home() {
           <Grid size={{ xs: 12, md: 8 }} sx={{ display: 'flex', alignItems: 'flex-end' }}>
             <Box>
               <Text type='h5'>
-                Conoce nuestros planes y escoge el que <span style={{ color: '#f68529' }}>mejor se adapte a ti</span>
+                Conoce nuestros planes y escoge el que <span style={{ color: '#f1842c' }}>mejor se adapte a ti</span>
               </Text>
               <Button variant='contained' color='secondary'>
                 ver más
@@ -144,7 +144,7 @@ export default function Home() {
           <Grid size={{ xs: 12, md: 5 }} sx={{ display: 'flex', alignItems: 'flex-start' }}>
             <Box>
               <Text type='h5'>
-                Conoce nuestros planes y escoge el que <span style={{ color: '#f68529' }}>mejor se adapte a ti</span>
+                Conoce nuestros planes y escoge el que <span style={{ color: '#f1842c' }}>mejor se adapte a ti</span>
               </Text>
               <Text type='caption'>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis reprehenderit perspiciatis perferendis praesentium recusandae,
@@ -155,19 +155,19 @@ export default function Home() {
           <Grid size={{ xs: 12, md: 4 }} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-around' }}>
             <Box sx={{ py: '1em',display: 'flex', justifyContent: 'center', flexDirection: 'row' }}>
               <Text type='h4'>120</Text>
-              <span style={{ color: '#f68529', paddingLeft: '1em' }}>
+              <span style={{ color: '#f1842c', paddingLeft: '1em' }}>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, provident.
               </span>
             </Box>
             <Box sx={{ display: 'flex', justifyContent: 'center', flexDirection: 'row' }}>
               <Text type='h4'>120</Text>
-              <span style={{ color: '#f68529', paddingLeft: '1em' }}>
+              <span style={{ color: '#f1842c', paddingLeft: '1em' }}>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, provident.
               </span>
             </Box>
             <Box sx={{ display: 'flex', justifyContent: 'center', flexDirection: 'row' }}>
               <Text type='h4'>120</Text>
-              <span style={{ color: '#f68529', paddingLeft: '1em' }}>
+              <span style={{ color: '#f1842c', paddingLeft: '1em' }}>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, provident.
               </span>
             </Box>
