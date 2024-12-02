@@ -36,7 +36,7 @@ export default function Home() {
             </Box>
           </Box>
           {/* child 2 */}
-          <Box sx={{ opacity: {xs: '0.7'} , zIndex: {xs: -1}, top:{xs: '5%'}, position: {xs: 'absolute', md: 'relative'},height: { xs: '50vh', md: '50vh' }, width: { xs: '100vw', md: '50vw' }}}>
+          <Box sx={{ opacity: {xs: '0.7', md: '1'} , zIndex: {xs: -1, md: 1}, top:{xs: '5%'}, position: {xs: 'absolute', md: 'relative'},height: { xs: '50vh', md: '50vh' }, width: { xs: '100vw', md: '50vw' }}}>
             <Image src='/images/image.png' alt='logo' fill style={{ objectFit: 'contain' }} />
           </Box>
         </Box>
