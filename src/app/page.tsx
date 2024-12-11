@@ -14,11 +14,14 @@ import ContactSection from '~/components/organisms/ContactSection';
 import { Container } from '@mui/material';
 
 const logos = [
-  { src: '/images/image copy.png', alt: 'Amazon Logo', size: 'large' }, // Correcto
-  { src: '/images/image.png', alt: 'Google Logo', size: 'small' },
-  { src: '/images/image.png', alt: 'Apple Logo', size: 'large' },
-  { src: '/images/image.png', alt: 'Nike Logo', size: 'small' },
-  { src: '/images/image.png', alt: 'Pepsi Logo', size: 'small' },
+  { src: '/images/empresas/amazon.png', alt: 'amazon Logo', size: 'large' },
+  { src: '/images/empresas/adidas.png', alt: 'adidas Logo', size: 'small' }, // Correcto
+  { src: '/images/empresas/apple.png', alt: 'Apple Logo', size: 'large' },
+  { src: '/images/empresas/google.png', alt: 'google Logo', size: 'large' },
+  { src: '/images/empresas/nike.png', alt: 'nike Logo', size: 'small' },
+  { src: '/images/empresas/pepsi.png', alt: 'Pepsi Logo', size: 'small' },
+  { src: '/images/empresas/uber.png', alt: 'uber Logo', size: 'small' },
+  { src: '/images/empresas/volkswagen.png', alt: 'volkswagen Logo', size: 'small' },
 ];
 
 export default function Home() {
@@ -104,7 +107,7 @@ export default function Home() {
         <Grid container>
           <Grid size={{ sm: 12, md: 4 }}>
             <Box sx={{ height: { sm: '30vh', md: '40vh' }, width: { sm: '100%', md: '30vw' }, position: 'relative' }}>
-              <Image src='/images/image.png' alt='logo' fill style={{ objectFit: 'contain' }} />
+              <Image src='/images/2.png' alt='logo' fill style={{ objectFit: 'contain' }} />
             </Box>
           </Grid>
           <Grid size={{ sm: 12, md: 8 }} sx={{ display: 'flex', alignItems: 'flex-end' }}>
@@ -141,7 +144,7 @@ export default function Home() {
         <Grid container sx={{py: '5em'}}>
           <Grid size={{ sm: 12, md: 3 }}>
             <Box sx={{ height: { sm: '20vh', md: '30vh' }, width: { sm: '100%', md: '20vw' }, position: 'relative' }}>
-              <Image src='/images/image.png' alt='logo' fill style={{ objectFit: 'contain' }} />
+              <Image src='/images/3.png' alt='logo' fill style={{ objectFit: 'contain' }} />
             </Box>
           </Grid>
           <Grid size={{ sm: 12, md: 5 }} sx={{ display: 'flex', alignItems: 'flex-start' }}>

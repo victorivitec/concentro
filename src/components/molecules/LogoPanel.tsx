@@ -13,23 +13,24 @@ const LogoPanel: React.FC<LogoPanelProps> = ({ logos }) => {
       sx={{
         display: 'grid',
         gridTemplateColumns: 'repeat(auto-fit, minmax(100px, 1fr))',
-        gap: '16px',
+        gap: '12px',
         justifyContent: 'center',
         alignItems: 'center',
         width: '100%',
-        padding: '16px',
+        padding: '8px',
       }}
     >
       {logos.map((logo, index) => (
         <Box
           key={index}
           sx={{
+         
             gridColumn: logo.size === 'large' ? 'span 2' : 'span 1', // Ocupa 2 columnas si es grande
             gridRow: logo.size === 'large' ? 'span 2' : 'span 1', // Ocupa 2 filas si es grande
             aspectRatio: '1', // Mantener un cuadrado perfecto
             borderRadius: '12px',
             overflow: 'hidden',
-            boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
+            boxShadow: '0 12px 12px rgba(0, 0, 0, 0.4)',
             position: 'relative',
           }}
         >
