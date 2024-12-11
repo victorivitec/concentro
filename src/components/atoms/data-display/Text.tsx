@@ -1,5 +1,6 @@
+'use client'
 import React from "react";
-import { Typography, useTheme } from "@mui/material";
+import { Theme, Typography, useTheme } from "@mui/material";
 import classNames from "classnames";
 import s from "./Text.module.scss";
 
@@ -35,7 +36,7 @@ interface TextProps {
     | "overline"; //variant
 }
 
-const variantStyles = (theme: any): Record<string, React.CSSProperties> => ({
+const variantStyles = (theme: Theme): Record<string, React.CSSProperties> => ({
   h1: {
     fontSize: "6.8em",
     [theme.breakpoints.down("sm")]: { fontSize: "2.5em" },

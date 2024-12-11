@@ -59,7 +59,7 @@ const Navbar = () => {
   return (
     <AppBar position="fixed" elevation={0} className={styles.navbar}>
       <Toolbar>
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+        <Typography variant="h6" sx={{ flexGrow: 1 }}>
           <Link href="/" className={styles.logo}>
             Concentro
           </Link>

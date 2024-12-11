@@ -1,11 +1,11 @@
-import { Box, Typography, Grid, TextField, Button, Paper } from "@mui/material";
+import { Box, Typography,Grid2 as Grid, TextField, Button, Paper } from "@mui/material";
 
 export default function ContactSection() {
   return (
     <Box sx={{ py: 8, px: { xs: 2, sm: 4, md: 8 }, backgroundColor: "#f9f9f9" }}>
       <Grid container spacing={4}>
         {/* Formulario */}
-        <Grid item xs={12} md={6}>
+        <Grid size={{xs: 12, md: 6}}>
           <Paper elevation={3} sx={{ p: 4, borderRadius: 2 }}>
             <Typography variant="h5" fontWeight="bold" gutterBottom>
               Contáctanos y sé parte del <span style={{ color: "#FF6F00" }}>mejor centro</span> de negocios de todo México.
@@ -48,7 +48,7 @@ export default function ContactSection() {
         </Grid>
 
         {/* Mapa y Datos */}
-        <Grid item xs={12} md={6}>
+        <Grid size={{xs: 12, md: 6}}>
           <Box
             sx={{
               height: "100%",

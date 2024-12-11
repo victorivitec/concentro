@@ -11,6 +11,8 @@ import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
 
 import ContactSection from '~/components/organisms/ContactSection';
 
+import { Container } from '@mui/material';
+
 const logos = [
   { src: '/images/image copy.png', alt: 'Amazon Logo', size: 'large' }, // Correcto
   { src: '/images/image.png', alt: 'Google Logo', size: 'small' },
@@ -22,13 +24,14 @@ const logos = [
 export default function Home() {
   return (
     <Layout>
+      <Container sx={{p: {xs:0, sm:0}}}>  
       {/* Banner section _______________________________________________________________________________________ */}
       <Box>
         {/* parent */}
-        <Box sx={{ display: 'flex', justifyContent: { xs: 'center', md: 'space-between' }, flexDirection: { xs: 'column', md: 'row' } }}>
+        <Box sx={{ display: 'flex', justifyContent: { sm: 'center', md: 'space-between' }, flexDirection: { sm: 'column', md: 'row' } }}>
           {/* child 1 */}
-          <Box sx={{ width: '100%' }}>
-            <Box sx={{ textAlign: { xs: 'center', md: 'left' } }}>
+          <Box sx={{ width: {sm: '100%', md: '30vw'} }}>
+            <Box sx={{ textAlign: { sm: 'center', md: 'left' } }}>
               <Text type='h2'>
                 Concentro <br /> ha cambiado
               </Text>
@@ -36,8 +39,8 @@ export default function Home() {
             </Box>
           </Box>
           {/* child 2 */}
-          <Box sx={{ opacity: {xs: '0.7', md: '1'} , zIndex: {xs: -1, md: 1}, top:{xs: '5%'}, position: {xs: 'absolute', md: 'relative'},height: { xs: '50vh', md: '50vh' }, width: { xs: '100vw', md: '50vw' }}}>
-            <Image src='/images/image.png' alt='logo' fill style={{ objectFit: 'contain' }} />
+          <Box sx={{ opacity: {sm: '0.7', md: '1'} , zIndex: {sm: -1, md: 1}, top:{sm: '5%'}, position: {sm: 'absolute', md: 'relative'},height: { sm: '40vh', md: '60vh' }, width: { sm: '100%', md: '70vw' }}}>
+            <Image src='/images/1.png' alt='logo' fill style={{ objectFit: 'contain' }} />
           </Box>
         </Box>
       </Box>
@@ -49,7 +52,7 @@ export default function Home() {
       <Box>
         <Grid container>
           {/* title */}
-          <Grid size={{ xs: 12, md: 5 }}>
+          <Grid size={{ sm: 12, md: 5 }}>
             <Box>
               <Text type='h4' sx={{ textAlign: 'center' }}>
                 Puntos de <span style={{ color: '#f1842c' }}>Valor</span>
@@ -57,7 +60,7 @@ export default function Home() {
             </Box>
           </Grid>
           {/* description */}
-          <Grid size={{ xs: 12, md: 7 }}>
+          <Grid size={{ sm: 12, md: 7 }}>
             <Text sx={{ marginTop: '1em' }}>
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis eligendi earum ducimus iste dolore! Nihil eius dolore ut
               eveniet autem.
@@ -66,15 +69,15 @@ export default function Home() {
           {/* container button & carousel */}
           <Grid size={12}>
             <Grid container sx={{ py: '2em' }}>
-              <Grid size={{ xs: 12, md: 3 }} sx={{ display: 'flex', justifyContent: 'center', py: '2em' }}>
+              <Grid size={{ sm: 12, md: 3 }} sx={{ display: 'flex', justifyContent: 'center', py: '2em' }}>
                 <Box>
                   <Button variant='outlined'>ver más</Button>
                 </Box>
               </Grid>
               {/* tarjetas */}
               <Grid
-                size={{ xs: 12, md: 9 }}
-                sx={{ height: { xs: '80vh', md: '20vh' }, display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap' }}
+                size={{ sm: 12, md: 9 }}
+                sx={{ height: { sm: '80vh', md: '20vh' }, display: 'flex', justifyContent: 'center', flexWrap: 'wrap' }}
               >
                 <ServiceCard
                   title='Zona de alimentos'
@@ -99,12 +102,12 @@ export default function Home() {
       {/* otra sección */}
       <Box>
         <Grid container>
-          <Grid size={{ xs: 12, md: 4 }}>
-            <Box sx={{ height: { xs: '30vh', md: '40vh' }, width: { xs: '100vw', md: '30vw' }, position: 'relative' }}>
+          <Grid size={{ sm: 12, md: 4 }}>
+            <Box sx={{ height: { sm: '30vh', md: '40vh' }, width: { sm: '100%', md: '30vw' }, position: 'relative' }}>
               <Image src='/images/image.png' alt='logo' fill style={{ objectFit: 'contain' }} />
             </Box>
           </Grid>
-          <Grid size={{ xs: 12, md: 8 }} sx={{ display: 'flex', alignItems: 'flex-end' }}>
+          <Grid size={{ sm: 12, md: 8 }} sx={{ display: 'flex', alignItems: 'flex-end' }}>
             <Box>
               <Text type='h5'>
                 Conoce nuestros planes y escoge el que <span style={{ color: '#f1842c' }}>mejor se adapte a ti</span>
@@ -128,7 +131,7 @@ export default function Home() {
               contacto
             </Button>
           </Grid>
-          <Grid size={{ xs: 12, md: 6 }}>
+          <Grid size={{ sm: 12, md: 6 }}>
             <LogoPanel logos={logos} />
           </Grid>
         </Grid>
@@ -136,12 +139,12 @@ export default function Home() {
       {/* otra sección */}
       <Box>
         <Grid container sx={{py: '5em'}}>
-          <Grid size={{ xs: 12, md: 3 }}>
-            <Box sx={{ height: { xs: '20vh', md: '30vh' }, width: { xs: '100%', md: '20vw' }, position: 'relative' }}>
+          <Grid size={{ sm: 12, md: 3 }}>
+            <Box sx={{ height: { sm: '20vh', md: '30vh' }, width: { sm: '100%', md: '20vw' }, position: 'relative' }}>
               <Image src='/images/image.png' alt='logo' fill style={{ objectFit: 'contain' }} />
             </Box>
           </Grid>
-          <Grid size={{ xs: 12, md: 5 }} sx={{ display: 'flex', alignItems: 'flex-start' }}>
+          <Grid size={{ sm: 12, md: 5 }} sx={{ display: 'flex', alignItems: 'flex-start' }}>
             <Box>
               <Text type='h5'>
                 Conoce nuestros planes y escoge el que <span style={{ color: '#f1842c' }}>mejor se adapte a ti</span>
@@ -152,7 +155,7 @@ export default function Home() {
               </Text>
             </Box>
           </Grid>
-          <Grid size={{ xs: 12, md: 4 }} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-around' }}>
+          <Grid size={{ sm: 12, md: 4 }} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-around' }}>
             <Box sx={{ py: '1em',display: 'flex', justifyContent: 'center', flexDirection: 'row' }}>
               <Text type='h4'>120</Text>
               <span style={{ color: '#f1842c', paddingLeft: '1em' }}>
@@ -177,15 +180,15 @@ export default function Home() {
       {/* otra sección */}
       <Grid>
         <Grid container>
-        <Grid size={{xs: 12, md: 4}} sx={{px: '0.5em'}}>
+        <Grid size={{sm: 12, md: 4}} sx={{px: '0.5em'}}>
           <Text type="h4" color="primary">test</Text>
           <Text>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum minima voluptates, illo aperiam reprehenderit aliquid odit sit omnis impedit unde?</Text>
         </Grid>
-        <Grid size={{xs: 12, md: 4}} sx={{px: '0.5em'}}>
+        <Grid size={{sm: 12, md: 4}} sx={{px: '0.5em'}}>
           <Text type="h4" color="primary">test</Text>
           <Text>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum minima voluptates, illo aperiam reprehenderit aliquid odit sit omnis impedit unde?</Text>
         </Grid>
-        <Grid size={{xs: 12, md: 4}} sx={{px: '0.5em'}}>
+        <Grid size={{sm: 12, md: 4}} sx={{px: '0.5em'}}>
           <Text type="h4" color="primary">test</Text>
           <Text>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum minima voluptates, illo aperiam reprehenderit aliquid odit sit omnis impedit unde?</Text>
         </Grid>
@@ -193,6 +196,7 @@ export default function Home() {
       </Grid>
       {/* seccion contacto */}
       <ContactSection />
+      </Container>
     </Layout>
   );
 }
