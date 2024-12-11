@@ -32,6 +32,7 @@ const LogoPanel: React.FC<LogoPanelProps> = ({ logos }) => {
             overflow: 'hidden',
             boxShadow: '0 12px 12px rgba(0, 0, 0, 0.4)',
             position: 'relative',
+            bgcolor: 'white',
           }}
         >
           <Image

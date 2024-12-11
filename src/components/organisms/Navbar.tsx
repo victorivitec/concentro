@@ -25,21 +25,24 @@ import styles from "./Navbar.module.scss";
 // Array de links con submenús
 const navLinks = [
   { label: "Inicio", path: "/" },
-  {
-    label: "Servicios",
-    subLinks: [
-      { label: "Servicio 1", path: "/servicio1" },
-      { label: "Servicio 2", path: "/servicio2" },
-    ],
-  },
-  {
-    label: "Más",
-    subLinks: [
-      { label: "Servicio 3", path: "/servicio3" },
-      { label: "Servicio 4", path: "/servicio4" },
-    ],
-  },
+  { label: "Empresas", path: "/" },
+  { label: "Renta & Venta", path: "/contacto" },
+  { label: "Torre Amstrong", path: "/contacto" },
   { label: "Contacto", path: "/contacto" },
+  // {
+  //   label: "Servicios",
+  //   subLinks: [
+  //     { label: "Servicio 1", path: "/servicio1" },
+  //     { label: "Servicio 2", path: "/servicio2" },
+  //   ],
+  // },
+  // {
+  //   label: "Más",
+  //   subLinks: [
+  //     { label: "Servicio 3", path: "/servicio3" },
+  //     { label: "Servicio 4", path: "/servicio4" },
+  //   ],
+  // },
 ];
 
 const Navbar = () => {

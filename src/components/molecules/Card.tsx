@@ -13,7 +13,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, ic
     <Card
       elevation={0}
       sx={{
-        margin: "0em",
+        margin: "0.5em 0",
         borderRadius: "12px",
         textAlign: "center",
         position: "relative",
