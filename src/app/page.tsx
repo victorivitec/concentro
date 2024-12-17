@@ -79,7 +79,7 @@ export default function Home() {
           <Image
             src="/images/1.png"
             alt="logo"
-            layout="fill"
+            fill
             priority
             sizes="(max-width: 600px) 100vw, 70vw" // Optimización de tamaño
             style={{
