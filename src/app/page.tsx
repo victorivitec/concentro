@@ -29,41 +29,66 @@ export default function Home() {
     <Layout>
       <Container maxWidth='xl' sx={{px: {xs:'0'}}}>
       {/* Banner section _______________________________________________________________________________________ */}
-      <Box>
-        {/* parent */}
-        <Box sx={{ display: 'flex', justifyContent: { xs: 'center', sm: 'center', md: 'space-between' }, flexDirection: { xs: 'column', md: 'row' } }}>
-          {/* child 1 */}
-          <Box sx={{ width: {xs: 'auto', md: '30vw'} }}>
-            <Box sx={{ textAlign: { xs: 'center', md: 'left' } }}>
-              <Text type='h2'>
-                Concentro <br /> ha cambiado
-              </Text>
-              <Button variant='contained'>ver más</Button>
-            </Box>
-          </Box>
-          {/* child 2 */}
-          <Box
+      <Box
       sx={{
-        opacity: { xs: 0.7, md: 1 },
-        zIndex: { xs: -1, md: 1 },
-        top: { xs: '5%' },
-        position: { xs: 'absolute', md: 'relative' },
-        height: { xs: '40vh', md: '60vh' }, // Define la altura
-        width: { xs: '90%', md: '70vw' }, // Define el ancho
-        maxHeight: '100%',
-        maxWidth: '100%',
+        position: "relative", // Para posicionar la imagen detrás en móviles
+        overflow: "hidden", // Evita desbordamientos
       }}
     >
-      <Image
-        src="/images/1.png"
-        alt="logo"
-        fill
-        sizes="(max-width: 600px) 100vw, 70vw" // Mejora el rendimiento en pantallas pequeñas
-        style={{ objectFit: 'contain' }}
-      />
-    </Box>
+      {/* Contenedor principal */}
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: { xs: "column", md: "row" }, // Column en móvil, row en desktop
+          justifyContent: "space-between",
+          alignItems: "center", // Alineación centrada
+          flexWrap: "wrap",
+          position: "relative", // Contenedor base para imagen absoluta
+        }}
+      >
+        {/* Texto */}
+        <Box
+          sx={{
+            width: { xs: "100%", md: "30%" }, // 100% en móvil, 30% en desktop
+            textAlign: { xs: "center", md: "left" },
+            zIndex: 2, // Para que esté sobre la imagen
+            position: "relative",
+            p: 2, // Espaciado interno
+          }}
+        >
+          <Text type="h2" component="h2">
+            Concentro <br /> ha cambiado
+          </Text>
+          <Button variant="contained" sx={{ marginTop: 2 }}>
+            Ver más
+          </Button>
+        </Box>
+
+        {/* Imagen */}
+        <Box
+          sx={{
+            position: { xs: "absolute", md: "relative" }, // Absoluta en móvil, relativa en desktop
+            top: { xs: "0", md: "auto" }, // Se posiciona arriba en móvil
+            left: { xs: "0", md: "auto" },
+            height: { xs: "100%", md: "60vh" }, // 100% en móvil, 60vh en desktop
+            width: { xs: "100%", md: "70%" }, // 100% en móvil, 70% en desktop
+            zIndex: { xs: 1, md: "auto" }, // Detrás del texto en móviles
+            opacity: { xs: 0.5, md: 1 }, // Transparente en móviles
+          }}
+        >
+          <Image
+            src="/images/1.png"
+            alt="logo"
+            layout="fill"
+            priority
+            sizes="(max-width: 600px) 100vw, 70vw" // Optimización de tamaño
+            style={{
+              objectFit: "contain",
+            }}
+          />
         </Box>
       </Box>
+    </Box>
       {/*
         -
         -      
