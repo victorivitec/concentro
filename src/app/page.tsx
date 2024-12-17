@@ -31,9 +31,9 @@ export default function Home() {
       {/* Banner section _______________________________________________________________________________________ */}
       <Box>
         {/* parent */}
-        <Box sx={{ display: 'flex', justifyContent: { xs: 'center', md: 'space-between' }, flexDirection: { xs: 'column', md: 'row' } }}>
+        <Box sx={{ display: 'flex', justifyContent: { xs: 'center', sm: 'center', md: 'space-between' }, flexDirection: { xs: 'column', md: 'row' } }}>
           {/* child 1 */}
-          <Box sx={{ width: {xs: '100%', md: '30vw'} }}>
+          <Box sx={{ width: {xs: 'auto', md: '30vw'} }}>
             <Box sx={{ textAlign: { xs: 'center', md: 'left' } }}>
               <Text type='h2'>
                 Concentro <br /> ha cambiado
