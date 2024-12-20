@@ -1,0 +1,27 @@
+// components/Navbar.module.scss
+.navbar {
+  background-color: transparent !important;
+  box-shadow: none;
+  width: 100vw;
+}
+
+.logo {
+  margin-left: 1em;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navLink {
+  text-transform: none;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.expandIcon {
+  transition: transform 0.3s ease;
+}
+
+.open {
+  transform: rotate(180deg); // Rotar 180 grados cuando esté abierto
+}
